@@ -1,7 +1,7 @@
 {:builds
  {:app {:asset-path "/js"
         :modules {:main {:init-fn app.core/main}}
-        :output-dir "public/js"
+        :output-dir "docs/js"
         :target :browser}
   :cards {:asset-path "/js"
           :modules {:main {:init-fn app.cards/main}}
@@ -16,6 +16,6 @@
         :target :node-test}}
  :dependencies [[reagent "0.8.1"]
                 [devcards "0.2.6"]]
- :dev-http {3000 "public"}
+ :dev-http {3000 "docs"}
  :nrepl {:port 3333}
  :source-paths ["src"]}
