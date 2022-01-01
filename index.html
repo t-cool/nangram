@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nangram</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="container">
+
+<!-- ヘッダー -->
+<div id="title">
+  <h1>なんぐらむ</h1>
+  <h2>下の文法一覧から問題を選んでください。</h2>
+</div>
+<div style="height: 30px;background-color: gray"></div>
+
+<!-- 経過時間 -->
+<span id="seconds" style="display:none"></span>
+
+<!-- 問題の提示 -->
+<div id="question">
+  <p id="japanese" style="margin:20px;"></p>
+  <p id="english" style="margin:20px;"></p>
+</div>
+
+<!-- 入力 -->
+<input autofocus type="text" placeholder="" id="word-input">
+<p id="message" style="display: none;"></p>
+
+<!-- 残り時間・点数 -->
+<div>
+  <p>
+    <input type="button" value="カウント開始" id="startcount" onclick="startShowing();" style="display: none;">
+    <input type="button" value="カウント停止" id="endcount" onclick="stopShowing();" style="display: none;">
+  </p>
+  <p style="display: none;"><span id="PassageArea">学習時間:</span></p>
+</div>
+
+<!-- 答えの提示 -->
+<div id="ans">
+  <button id="hide_answer" onclick="showAnswer();input_focus.focus();" style="margin:20px;padding: 10px;">Answer</button>
+  <p id="answer"></p>
+  <p id="hint"></p>
+  <button type="button" id="hide_quiz" style="display:none" onclick="showGrammar()">文法一覧</button>
+</div>
+
+<div id="grammarBtns">
+  <p onclick="changeQuiz('be-now')">be動詞</p>
+  <p onclick="changeQuiz('gv-now')">一般動詞現在</p>
+  <p onclick="changeQuiz('third')">3単現</p>
+  <p onclick="changeQuiz('gv-past')">一般動詞過去</p>
+  <p onclick="changeQuiz('irr-past')">不規則過去</p>
+  <p onclick="changeQuiz('wh-s')">疑問詞</p>
+  <p onclick="changeQuiz('meirei')">命令文</p>
+  <p onclick="changeQuiz('noun')">名詞・冠詞</p>
+  <p onclick="changeQuiz('pron')">代名詞</p>
+  <p onclick="changeQuiz('adj')">形容詞</p>
+  <p onclick="changeQuiz('adv')">副詞</p>
+  <p onclick="changeQuiz('prep')">前置詞</p>
+  <p onclick="changeQuiz('prog_now')">現在進行形</p>
+  <p onclick="changeQuiz('prog_past')">過去進行形</p>
+  <p onclick="changeQuiz('aux')">助動詞</p>
+  <p onclick="changeQuiz('conj')">接続詞</p>
+  <p onclick="changeQuiz('thereis')">There is構文</p>
+  <p onclick="changeQuiz('future')">未来表現</p>
+  <p onclick="changeQuiz('compare1')">比較表現1</p>
+  <p onclick="changeQuiz('compare2')">比較表現2</p>
+  <p onclick="changeQuiz('inf1')">不定詞(1)</p>
+  <p onclick="changeQuiz('vnoun')">動名詞</p>
+  <p onclick="changeQuiz('passive')">受け身</p>
+  <p onclick="changeQuiz('pp-fin')">現在完了 完了</p>
+  <p onclick="changeQuiz('pp-for')">現在完了 継続</p>
+  <p onclick="changeQuiz('pp-exp')">現在完了 経験</p>
+  <p onclick="changeQuiz('participle')">分詞</p>
+  <p onclick="changeQuiz('inf2')">不定詞(2)</p>
+  <p onclick="changeQuiz('indirect_q')">間接疑問文</p>
+  <p onclick="changeQuiz('tag_q')">付加疑問文</p>
+  <p onclick="changeQuiz('negative_q')">否定疑問文</p>
+  <p onclick="changeQuiz('rnoun-subj')">関係代名詞 主格</p>
+  <p onclick="changeQuiz('rnoun-obj')">関係代名詞 目的格</p>
+  <p onclick="changeQuiz('conv')">会話表現</p>
+  <p onclick="changeQuiz('idiom_verb')">熟語(動詞)</p>
+  <p onclick="changeQuiz('idiom_adj')">熟語(形容詞)</p>
+  <p onclick="changeQuiz('idiom_adv')">熟語(副詞)</p>
+  <p onclick="changeQuiz('imi1')">意味順01</p>
+  <p onclick="changeQuiz('imi2')">意味順02</p>
+  <p onclick="changeQuiz('imi3')">意味順03</p>
+  <p onclick="changeQuiz('all1')">152文-1</p>
+  <p onclick="changeQuiz('all2')">152文-2</p>
+  <p onclick="changeQuiz('all3')">152文-3</p>
+  <p onclick="changeQuiz('all4')">152文-4</p>
+  <p onclick="changeQuiz('all5')">152文-5</p>
+  <p onclick="changeQuiz('all6')">152文-6</p>
+  <p onclick="changeQuiz('g1')">総合 1</p>
+  <p onclick="changeQuiz('g2')">総合 2</p>
+</div>
+</div>    
+
+<div id="namae"></div>
+<br>
+<div id="result"></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="js/talkify.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
