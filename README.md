@@ -2,12 +2,8 @@
 
 ![image](./screenshot/img.png)
 
-中学英文法の学習アプリです。
+Learning app for Japanese students to learn English grammar by typing
 
-### author
-
-t-cool
-
-### ライセンス
+### License
 
 MIT
